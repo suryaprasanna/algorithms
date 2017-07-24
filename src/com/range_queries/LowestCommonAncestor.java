@@ -13,13 +13,13 @@ class LowestCommonAncestor {
 
 	}
 
-	public static void preprocess(int [] arr, int [] parent, int n) {
+	public void preprocess(int [] arr, int [] parent, int n) {
 		int [] level = new int[n], sqrtparent = new int[n];
 		int sqrtval = (int) Math.sqrt(n);
 		dfs(arr, parent, level, sqrtparent, 0, 0, sqrtval);
 	}
 
-	public static void dfs(int [] arr, int [] parent, int [] levelarr, int [] sqrtparent, int pntr, int level, int sqrtval) {
+	public void dfs(int [] arr, int [] parent, int [] levelarr, int [] sqrtparent, int pntr, int level, int sqrtval) {
 		level[pntr] = level;
 		if (parent[pntr] < 0) {
 			sqrtparent[pntr] = pntr;
